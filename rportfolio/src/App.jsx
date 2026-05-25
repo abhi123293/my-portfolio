@@ -11,7 +11,7 @@ const [contacts, setContacts] = useState([]);
 
 async function fetchContacts() {
   try {
-    const response = await fetch("http://localhost:5000/contact");
+    const response = await fetch("https://portbackend-1-o5d1.onrender.com/contact")
     const data = await response.json();
     setContacts(data);
   } catch (err) {
@@ -26,7 +26,7 @@ async function handleSubmit() {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/contact", {
+    const response = await fetch("https://portbackend-1-o5d1.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
