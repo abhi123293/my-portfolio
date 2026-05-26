@@ -9,15 +9,15 @@ const [message, setMessage] = useState("");
 const [success, setSuccess] = useState("");
 const [contacts, setContacts] = useState([]);
 
-async function fetchContacts() {
-  try {
-    const response = await fetch("https://portbackend-1-o5d1.onrender.com/contact")
-    const data = await response.json();
-    setContacts(data);
-  } catch (err) {
-    console.log("Error fetching contacts:", err);
-  }
-}
+// async function fetchContacts() {
+//   try {
+//     const response = await fetch("https://portbackend-1-o5d1.onrender.com/contact")
+//     const data = await response.json();
+//     setContacts(data);
+//   } catch (err) {
+//     console.log("Error fetching contacts:", err);
+//   }
+// }
 
 async function handleSubmit() {
   if (name === "" || email === "" || message === "") {
@@ -49,7 +49,7 @@ if (!response.ok) {
     setName("");
     setEmail("");
     setMessage("");
-    setSuccess("Message sent successfully!");
+    setSuccess(`thankyou ${name} for your response!`); 
     setTimeout(() => {
   setSuccess("");
 }, 3000);
