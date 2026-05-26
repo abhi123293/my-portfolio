@@ -434,11 +434,11 @@ font-family: Georgia, serif;
 .messages-list {
   margin: 30px auto 70px;
   max-width: 600px;
-  padding: 25px;
-  border-radius: 25px;
+  padding: 22px;
+  border-radius: 22px;
   background: linear-gradient(145deg, #ffffff, #eee9e2);
-  box-shadow: 18px 18px 40px rgba(0, 0, 0, 0.14),
-              -8px -8px 25px rgba(255, 255, 255, 0.8);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
 }
 
 .messages-list h3 {
@@ -449,17 +449,20 @@ font-family: Georgia, serif;
 }
 
 .message-card {
-  background: #18333a;
-  color: white;
-  padding: 20px;
-  border-radius: 18px;
-  margin-top: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: 0.3s ease;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 16px;
+  border-radius: 16px;
+  margin: 12px 0;
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  transform: none;
+  backdrop-filter: none;
+
+  transition: 0.2s ease;
 }
 
 .message-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-2px);
 }
 
 .message-card p {
