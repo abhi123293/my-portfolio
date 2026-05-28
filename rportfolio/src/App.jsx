@@ -67,6 +67,9 @@ setTimeout(() => {
   }
 }
   return (
+     <BrowserRouter>
+    <Routes>
+      <Route path="/" element={
     <div className="portfolio">
 
       <nav className="navbar">
@@ -244,8 +247,14 @@ setTimeout(() => {
   <p>© 2026 Abhijith PJ. All rights reserved.</p>
 </footer>
 
-    </div>
-  );
+</div>
+} />
+
+<Route path="/projects" element={<Projects />} />
+
+</Routes>
+</BrowserRouter>
+);
 }
 
 export default App;
