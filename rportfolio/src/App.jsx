@@ -133,7 +133,10 @@ setTimeout(() => {
   <div className="stat-card">
     <h2>MERN</h2>
     <p>Stack Developer</p>
-  </div>
+  </div><a href="/resume.pdf" download className="resume-btn">
+  Download Resume
+</a>
+
 </section>
 <section className="services-section" id="services">
   <h2 className="section-title">What I Do</h2>

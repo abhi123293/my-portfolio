@@ -137,11 +137,7 @@ font-family: Georgia, serif;
   color: #d75b45;
   font-size: 14px;
 }
-.hero-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .profile-shape {
   width: 260px;
   height: 360px;
@@ -317,6 +313,20 @@ font-family: Georgia, serif;
   color: #18333a;
   text-align: center;
   font-family: Georgia, serif;
+}
+.resume-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #00ffd5;
+  color: #071b22;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.resume-btn:hover {
+  background: #ffffff;
 }
 .section-title {
   color: #eeeff0;
