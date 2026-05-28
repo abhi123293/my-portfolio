@@ -162,9 +162,12 @@ font-family: Georgia, serif;
 .stats-section {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  align-items: center;
+  gap: 50px;
   padding: 40px 70px;
+  flex-wrap: wrap;
 }
+
  .stat-card {
   width: 220px;
   background: linear-gradient(145deg, #ffffff, #729db8);
@@ -192,19 +195,25 @@ font-family: Georgia, serif;
 }
 
 .resume-btn {
-  display: block;
-  width: 220px;
-  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 60px;
   background: linear-gradient(145deg, #ffffff, #729db8);
-  padding: 8px 16px;
   border-radius: 25px;
   text-align: center;
   box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.18),
               -6px -6px 18px rgba(255, 255, 255, 0.35);
   transition: 0.4s ease;
   text-decoration: none;
+  color: rgb(247, 17, 17);
 }
 
+.resume-btn:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: linear-gradient(145deg, #ffffff, #729db8);
+}
  .services-section {
   padding: 70px;
 }
@@ -329,9 +338,6 @@ font-family: Georgia, serif;
   font-family: Georgia, serif;
 }
 
-.resume-btn:hover {
-  background: #ffffff;
-}
 .section-title {
   color: #eeeff0;
 }
