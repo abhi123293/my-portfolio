@@ -35,7 +35,7 @@ body {
 .logo {
   font-size: 22px;
   font-family: cursive;
-  color: #18333a;
+  color: #fafbfb;
 }
 
 .nav-links {
@@ -48,7 +48,6 @@ body {
 
 .nav-links li {
   cursor: pointer;
-  color: #f0f2f3;
 }
 
 .phone {
@@ -419,7 +418,7 @@ font-family: Georgia, serif;
 }
  .nav-links a {
   text-decoration: none;
-  color: #18333a;
+  color: #dfdfdf;
 }
  .nav-links a:hover {
   color: #b18383;
