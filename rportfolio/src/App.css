@@ -191,6 +191,18 @@ font-family: Georgia, serif;
   color: #18333a;
 }
 
+.resume-btn {
+  display: inline-block;
+ width: 220px;
+  background: linear-gradient(145deg, #ffffff, #729db8);
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.18),
+              -6px -6px 18px rgba(255, 255, 255, 0.35);
+  transition: 0.4s ease;
+}
+
  .services-section {
   padding: 70px;
 }
@@ -313,16 +325,6 @@ font-family: Georgia, serif;
   color: #18333a;
   text-align: center;
   font-family: Georgia, serif;
-}
-.resume-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #00ffd5;
-  color: #071b22;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 20px;
 }
 
 .resume-btn:hover {
