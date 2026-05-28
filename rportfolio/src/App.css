@@ -212,7 +212,7 @@ font-family: Georgia, serif;
 
 .resume-btn:hover {
   transform: translateY(-10px) scale(1.03);
-  background: linear-gradient(145deg, #ffffff, #729db8);
+  background: linear-gradient(145deg, #ffffff, #5d29e0);
 }
  .services-section {
   padding: 70px;
