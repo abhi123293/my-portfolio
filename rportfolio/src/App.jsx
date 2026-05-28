@@ -1,7 +1,7 @@
  import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Projects from "./components/Projects";
+import Project from "./components/Project";
 
 
 function App() {
@@ -186,9 +186,11 @@ setTimeout(() => {
       <p>Personal portfolio website built using React and CSS.</p>
       <button>View Project</button>
     </div>
-   <Link to="/projects" className="college-projects-btn">
-    College Projects
-  </Link>
+  </div>
+    <div className="college-btn-box">
+    <Link to="/projects" className="college-projects-btn">
+      College Projects
+    </Link>
   </div>
 </section>
 <section className="skills-section">
@@ -250,7 +252,7 @@ setTimeout(() => {
 </div>
 } />
 
-<Route path="/projects" element={<Projects />} />
+<Route path="/projects" element={<Project />} />
 
 </Routes>
 </BrowserRouter>

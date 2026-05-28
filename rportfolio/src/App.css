@@ -309,6 +309,29 @@ font-family: Georgia, serif;
   transform: scale(1.05);
 }
 
+
+.college-btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.college-projects-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #18333a;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.college-projects-btn:hover {
+  background: #d75b45;
+  transform: scale(1.05);
+}
+
 .about-section {
   padding: 70px;
   display: flex;
