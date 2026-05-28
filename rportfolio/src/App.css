@@ -192,8 +192,9 @@ font-family: Georgia, serif;
 }
 
 .resume-btn {
-  display: inline-block;
- width: 220px;
+  display: block;
+  width: 220px;
+  margin: 20px auto;
   background: linear-gradient(145deg, #ffffff, #729db8);
   padding: 8px 16px;
   border-radius: 25px;
