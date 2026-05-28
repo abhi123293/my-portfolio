@@ -48,6 +48,7 @@ body {
 
 .nav-links li {
   cursor: pointer;
+  color: #f0f2f3;
 }
 
 .phone {
