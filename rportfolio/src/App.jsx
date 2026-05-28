@@ -1,6 +1,6 @@
  import "./App.css";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Project from "./components/Project";
 
 
@@ -188,9 +188,9 @@ setTimeout(() => {
     </div>
   </div>
     <div className="college-btn-box">
-    <Link to="/projects" className="college-projects-btn">
-      College Projects
-    </Link>
+    <a href="/projects" className="college-projects-btn">
+  College Projects
+</a>
   </div>
 </section>
 <section className="skills-section">

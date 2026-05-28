@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Project.css";
 
 
 function Project() {
     return (
     <section className="college-project-page">
-      <Link to="/" className="back-home-btn">← Back Home</Link>
+      <a href="/" className="back-home-btn">← Back Home</a>
 
       <h1>College Projects</h1>
 
