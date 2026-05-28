@@ -181,7 +181,9 @@ setTimeout(() => {
       <p>Personal portfolio website built using React and CSS.</p>
       <button>View Project</button>
     </div>
-    
+   <Link to="/projects" className="college-projects-btn">
+    College Projects
+  </Link>
   </div>
 </section>
 <section className="skills-section">
