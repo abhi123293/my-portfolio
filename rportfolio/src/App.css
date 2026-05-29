@@ -9,6 +9,8 @@ body {
   background-color: #f4f3ee;
   font-family: Arial, sans-serif;
   color: #18333a;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .portfolio {
@@ -20,7 +22,7 @@ body {
     url("/l.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 /* Navbar */
@@ -552,7 +554,7 @@ font-family: Georgia, serif;
     align-items: center;
     justify-content: center;
     gap: 25px;
-    padding: 30px 20px;
+    padding: 25px 16px;
     text-align: center;
   }
 
@@ -587,50 +589,53 @@ font-family: Georgia, serif;
     width: 220px;
     height: 300px;
   }
-  
-.stats-section {
-  flex-direction: column;
-  padding: 30px 25px;
-}
 
-.stat-card {
-  width: 100%;
-}
- .services-section {
-  padding: 40px 25px;
-}
+  .stats-section {
+    flex-direction: column;
+    padding: 30px 25px;
+  }
 
-.section-title {
-  font-size: 32px;
-}
+  .stat-card {
+    width: 100%;
+  }
 
-.services-container {
-  flex-direction: column;
-}
+  .services-section {
+    padding: 32px 20px;
+  }
 
-.service-card {
-  width: 100%;
-}
-.projects-section {
-  padding: 40px 25px;
-}
+  .section-title {
+    font-size: 32px;
+  }
 
-.projects-container {
-  flex-direction: column;
-}
+  .services-container {
+    flex-direction: column;
+  }
 
-.project-card {
-  width: 100%;
-}
- .contact-section {
-  padding: 40px 25px;
-}
+  .service-card {
+    width: 100%;
+  }
+
+  .projects-section {
+    padding: 32px 20px;
+  }
+
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .contact-section {
+    padding: 32px 20px;
+  }
 
 .contact-box {
   width: 100%;
 }
 .skills-section {
-  padding: 40px 25px;
+  padding: 32px 20px;
 }
 
 .skills-container {
