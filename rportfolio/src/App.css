@@ -9,7 +9,7 @@ body {
   background-color: #f4f3ee;
   font-family: Arial, sans-serif;
   color: #18333a;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .portfolio {
@@ -540,8 +540,9 @@ font-family: Georgia, serif;
 
 /* Mobile */
 @media (max-width: 768px) {
+
   .navbar {
-    padding: 0 25px;
+    padding: 15px 20px;
   }
 
   .nav-links,
@@ -549,105 +550,126 @@ font-family: Georgia, serif;
     display: none;
   }
 
-  .hero {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 15px;
-  gap: 15px;
-}
+  .logo {
+    font-size: 20px;
+  }
 
-  .hero-left {
-  width: 30%;
-}
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    padding: 30px 20px;
+  }
+
+  .hero-left,
+  .hero-center,
+  .hero-right {
+    width: 100%;
+    max-width: 100%;
+  }
 
   .hero-left h1 {
-    font-size: 28px;
-    line-height: 1.1;
+    font-size: 42px;
+    line-height: 1.2;
   }
 
-  .email {
-    margin-top: 20px;
-  }
-
-  .hero-right {
-  width: 40%;
-  max-width: 40%;
-}
-
-  .info-card {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .info-card p {
-    font-size: 13px;
-  }
-
-  .hero-center {
-    width: 30%;
+  .image-3d-card {
+    width: 220px;
+    height: 300px;
+    margin: auto;
   }
 
   .profile-shape {
-  width: 150px;
-  height: 220px;
-}
-.image-3d-card {
-  width: 170px;
-  height: 240px;
-}
+    width: 220px;
+    height: 300px;
+    margin: auto;
+  }
 
+  .info-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
 
+  .info-card p {
+    font-size: 15px;
+  }
+
+  .email {
+    margin-top: 15px;
+  }
+
+  /* Stats */
   .stats-section {
     flex-direction: column;
-    padding: 30px 25px;
+    gap: 20px;
+    padding: 30px 20px;
   }
 
   .stat-card {
     width: 100%;
+    max-width: 320px;
   }
 
+  /* Services */
   .services-section {
-    padding: 40px 25px;
-  }
-
-  .section-title {
-    font-size: 32px;
+    padding: 50px 20px;
   }
 
   .services-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .service-card {
     width: 100%;
+    max-width: 350px;
   }
 
+  /* Projects */
   .projects-section {
-    padding: 40px 25px;
+    padding: 50px 20px;
   }
 
   .projects-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .project-card {
     width: 100%;
+    max-width: 350px;
   }
 
+  /* About */
+  .about-section {
+    padding: 50px 20px;
+  }
+
+  .about-box {
+    width: 100%;
+  }
+
+  /* Skills */
+  .skills-section {
+    padding: 50px 20px;
+  }
+
+  .skills-container {
+    justify-content: center;
+  }
+
+  /* Contact */
   .contact-section {
-    padding: 40px 25px;
+    padding: 50px 20px;
   }
 
   .contact-box {
     width: 100%;
   }
 
-  .skills-section {
-    padding: 40px 25px;
-  }
-
-  .skills-container {
-    justify-content: center;
+  .section-title {
+    font-size: 32px;
+    text-align: center;
   }
 }
