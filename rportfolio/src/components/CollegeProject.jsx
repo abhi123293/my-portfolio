@@ -3,10 +3,10 @@ import "./Project.css";
 import { Link } from "react-router-dom";
 
 
-function Project() {
+function CollegeProject() {
     return (
     <section className="college-project-page">
-      <a Link to ="/" className="back-home-btn">← Back Home</a>
+      <Link to ="/" className="back-home-btn">← Back Home</Link>
 
       <h1>College Projects</h1>
 
@@ -75,4 +75,4 @@ function Project() {
 }
 
 
-export default Project;
+export default CollegeProject;

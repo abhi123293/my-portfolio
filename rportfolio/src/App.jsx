@@ -1,7 +1,7 @@
  import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Project from "./components/Project.jsx";
+import Project from "./components/CollegeProject.jsx";
 
 
 function App() {
@@ -188,9 +188,9 @@ setTimeout(() => {
     </div>
   </div>
     <div className="college-btn-box">
-    <a href="/projects" className="college-projects-btn">
+    <Link to="/projects" className="college-projects-btn">
   College Projects
-</a>
+</Link>
   </div>
 </section>
 <section className="skills-section">
@@ -252,7 +252,7 @@ setTimeout(() => {
 </div>
 } />
 
-<Route path="/projects" element={<Project />} />
+<Route path="/projects" element={<CollegeProject />} />
 
 </Routes>
 </BrowserRouter>
