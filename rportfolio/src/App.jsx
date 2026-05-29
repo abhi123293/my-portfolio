@@ -1,8 +1,7 @@
  import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Project from "./components/CollegeProject.jsx";
-
+import CollegeProject from "./components/CollegeProject.jsx";
 
 function App() {
 const [name, setName] = useState("");
