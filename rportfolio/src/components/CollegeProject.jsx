@@ -1,9 +1,14 @@
 import React from "react";
 import "./Project.css";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 
 function CollegeProject() {
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
     return (
     <section className="college-project-page">
       <Link to ="/" className="back-home-btn">← Back Home</Link>
