@@ -140,9 +140,9 @@ setTimeout(() => {
     <p>Stack Developer</p>
   </div>
 
-<Link to="/Abhijith_Resume.pdf" download className="resume-btn">
+<a href="/Abhijith_Resume.pdf" download className="resume-btn">
   Download Resume
-</Link>
+</a>
 
 </section>
 <section className="services-section" id="services">
