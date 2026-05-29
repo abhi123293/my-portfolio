@@ -1,6 +1,6 @@
  import "./App.css";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Project from "./components/Project";
 
 
@@ -140,9 +140,9 @@ setTimeout(() => {
     <p>Stack Developer</p>
   </div>
 
-<a href="/Abhijith_Resume.pdf" download className="resume-btn">
+<Link to="/Abhijith_Resume.pdf" download className="resume-btn">
   Download Resume
-</a>
+</Link>
 
 </section>
 <section className="services-section" id="services">
