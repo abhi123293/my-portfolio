@@ -1,7 +1,7 @@
  import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Project from "./components/Project";
+import Project from "./components/Project.jsx";
 
 
 function App() {
