@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import CollegeProject from "./components/CollegeProject";
-
+import NotesProject from "./components/NotesProject";
 function App() {
 const [name, setName] = useState("");
 const [email, setEmail] = useState("");
@@ -175,7 +175,9 @@ setTimeout(() => {
     <div className="project-card">
       <h3>Notes App</h3>
       <p>A simple MERN app to create, read, update, and delete notes.</p>
-      <button>View Project</button>
+        <Link to="/notes-project">
+  <button>View Project</button>
+</Link>
     </div>
 
     <div className="project-card">
@@ -256,6 +258,7 @@ setTimeout(() => {
 } />
 
 <Route path="/projects" element={<CollegeProject />} />
+<Route path="/notes-project" element={<NotesProject />} />
 
 </Routes>
 </BrowserRouter>
