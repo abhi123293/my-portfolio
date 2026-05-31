@@ -25,6 +25,16 @@ async function handleSubmit() {
     alert("Please fill all fields");
     return;
   }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    alert("Please enter a valid email address");
+    return;
+  }
+   if (message.trim().length < 10) {
+    alert("Message must contain at least 10 characters");
+    return;
+  }
 
   try {
     const response = await fetch("https://portbackend-1-o5d1.onrender.com/contact", {
