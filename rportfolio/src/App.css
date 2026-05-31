@@ -543,9 +543,18 @@ font-family: Georgia, serif;
 
   .navbar {
     padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .nav-links,
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 10px;
+  }
+
   .phone {
     display: none;
   }
@@ -553,7 +562,7 @@ font-family: Georgia, serif;
   .logo {
     font-size: 20px;
   }
-
+  
   /* Hero */
   .hero {
     flex-direction: column;
