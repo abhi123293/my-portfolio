@@ -3,9 +3,14 @@
    ======================================== */
 .college-project-page {
   min-height: 100vh;
-  padding: 60px;
+  padding: 100px 60px 60px;
   background: #0a0a0f;
   color: #e0e0e8;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .back-home-btn {
@@ -16,46 +21,71 @@
   color: #fff;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 12px 24px;
+  padding: 10px 22px;
   border-radius: 100px;
   font-weight: 500;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .back-home-btn:hover {
   background: linear-gradient(135deg, #7c3aed, #06b6d4);
   border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.35);
 }
 
 .college-project-page h1 {
   text-align: center;
-  margin: 50px 0;
+  margin: 48px 0 16px;
   font-family: 'Outfit', sans-serif;
-  font-size: 44px;
+  font-size: 48px;
   font-weight: 700;
+  letter-spacing: -1.5px;
   background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.college-project-page h1::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+.college-project-page > .section-subtitle {
+  text-align: center;
+  color: #6b6b7b;
+  font-size: 16px;
+  margin: 0 auto 56px;
+  max-width: 500px;
+  display: block;
+  line-height: 1.7;
 }
 
 .project-detail {
-  max-width: 850px;
+  max-width: 880px;
   margin: 0 auto 40px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #e0e0e8;
   padding: 40px;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-detail::before {
@@ -71,32 +101,33 @@
 .project-detail:hover {
   border-color: rgba(124, 58, 237, 0.2);
   transform: translateY(-4px);
-  box-shadow: 0 0 60px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
 }
 
 .project-detail h2 {
   font-family: 'Outfit', sans-serif;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 600;
   color: #f0f0f5;
   margin-bottom: 16px;
+  letter-spacing: -0.5px;
 }
 
 .project-detail h3 {
   font-family: 'Outfit', sans-serif;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 600;
   color: #a78bfa;
-  margin-bottom: 12px;
+  margin: 28px 0 12px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.8px;
 }
 
 .project-detail p {
-  line-height: 1.8;
+  line-height: 1.85;
   font-size: 15px;
   color: #9898a6;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .project-detail img {
@@ -105,7 +136,8 @@
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.06);
-  margin-top: 8px;
+  margin-top: 20px;
+  display: block;
 }
 
 /* ========================================
@@ -113,59 +145,78 @@
    ======================================== */
 .notes-project-page {
   min-height: 100vh;
-  padding: 60px;
+  padding: 100px 60px 60px;
   background: #0a0a0f;
   color: #e0e0e8;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .notes-project-page h1 {
   font-family: 'Outfit', sans-serif;
-  font-size: 44px;
+  font-size: 48px;
   font-weight: 700;
-  margin: 40px 0 20px;
+  margin: 48px 0 16px;
+  letter-spacing: -1.5px;
   background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.notes-project-page h1::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+.notes-project-page .section-subtitle {
+  text-align: center;
+  color: #6b6b7b;
+  font-size: 16px;
+  margin-bottom: 40px;
+  max-width: 500px;
 }
 
 .notes-project-page p {
-  max-width: 600px;
+  max-width: 640px;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.85;
   color: #9898a6;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 /* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 768px) {
-  .college-project-page {
-    padding: 30px 20px;
-  }
+  .college-project-page { padding: 80px 20px 40px; }
+  .college-project-page h1 { font-size: 32px; margin: 32px 0 14px; }
+  .college-project-page h1::before { margin-bottom: 14px; }
+  .project-detail { padding: 28px 22px; }
+  .project-detail h2 { font-size: 22px; }
+  .project-detail h3 { font-size: 11px; letter-spacing: 1.4px; }
 
-  .college-project-page h1 {
-    font-size: 30px;
-    margin: 30px 0;
-  }
+  .notes-project-page { padding: 80px 20px 40px; }
+  .notes-project-page h1 { font-size: 32px; margin: 32px 0 14px; }
+  .notes-project-page h1::before { margin-bottom: 14px; }
+}
 
-  .project-detail {
-    padding: 24px 20px;
-  }
-
-  .project-detail h2 {
-    font-size: 22px;
-  }
-
-  .notes-project-page {
-    padding: 30px 20px;
-  }
-
-  .notes-project-page h1 {
-    font-size: 30px;
-  }
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
