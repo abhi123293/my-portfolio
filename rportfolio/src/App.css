@@ -483,32 +483,22 @@
 
 .about-box {
   max-width: 750px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  backdrop-filter: blur(16px);
-  padding: 48px;
-  border-radius: var(--radius-lg);
-  position: relative;
-  overflow: hidden;
-  transition: var(--transition);
+  padding: 0;
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .about-box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--gradient-accent);
-  border-radius: 2px;
+  display: none;
 }
 
 .about-box:hover {
-  border-color: rgba(124, 58, 237, 0.15);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-glow);
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .about-box p {
