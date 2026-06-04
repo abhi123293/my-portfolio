@@ -123,16 +123,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="hero-right">
-                  <div className="info-card">
-                    <p>
-                      I design and build{" "}
-                      <span>modern web applications</span> using
-                      <span> React</span>, <span>Node.js</span>,{" "}
-                      <span>Express.js</span>, and <span>MongoDB</span>.
-                    </p>
-                  </div>
-                </div>
+
               </section>
 
               {/* ─── About ─── */}
