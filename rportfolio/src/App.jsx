@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { label: "Services", href: "#services" },
   { label: "Works", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const SKILL_CATEGORIES = [
@@ -604,6 +605,100 @@ function Skills() {
   );
 }
 
+function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
+    setFormData({ name: "", email: "", message: "" });
+  };
+
+  return (
+    <section className="contact-section" id="contact">
+      <h2 className="section-title" data-reveal>Get In Touch</h2>
+      <p className="section-subtitle" data-reveal>
+        Have a project in mind? Let's work together
+      </p>
+      <div className="contact-wrapper" data-reveal>
+        <div className="contact-info">
+          <div className="contact-info-card">
+            <div className="contact-info-icon">
+              <MailIcon />
+            </div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:pjabhijith8@gmail.com">pjabhijith8@gmail.com</a>
+            </div>
+          </div>
+          <div className="contact-info-card">
+            <div className="contact-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <h4>Location</h4>
+              <p>Kerala, India</p>
+            </div>
+          </div>
+          <div className="contact-socials">
+            <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub"><GithubIcon /></a>
+            <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedInIcon /></a>
+          </div>
+        </div>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="your@email.com"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell me about your project..."
+              rows="5"
+              required
+            />
+          </div>
+          <button type="submit" className={`submit-btn ${submitted ? "submitted" : ""}`}>
+            {submitted ? "Message Sent!" : "Send Message"}
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="footer">
@@ -617,6 +712,7 @@ function Footer() {
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#projects">Works</a>
+          <a href="#contact">Contact</a>
         </div>
         <div className="footer-social">
           <h4>Connect</h4>
@@ -652,6 +748,7 @@ function HomePage() {
         <Services />
         <Projects />
         <Skills />
+        <Contact />
       </main>
       <Footer />
     </div>
