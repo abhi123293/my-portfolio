@@ -835,10 +835,8 @@ body {
 
 .about-box {
   padding: 40px 32px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   text-align: center;
   position: relative;
@@ -852,7 +850,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 1px;
   background: var(--gradient-accent);
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -860,8 +858,8 @@ body {
 
 .about-box:hover {
   transform: translateY(-6px);
-  border-color: rgba(124, 58, 237, 0.2);
-  box-shadow: var(--shadow-glow);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.1), inset 0 0 20px rgba(124, 58, 237, 0.03);
 }
 
 .about-box:hover::before {
@@ -872,18 +870,19 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 16px;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.15);
+  background: transparent;
+  border: 1px solid rgba(124, 58, 237, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
   color: var(--accent-start);
-  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, border-color 0.35s ease;
 }
 
 .about-box:hover .about-icon {
   transform: scale(1.1) rotate(-5deg);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
 .about-box h3 {
@@ -918,10 +917,8 @@ body {
 
 .stat-card {
   width: 220px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 36px 28px;
   border-radius: var(--radius-md);
   text-align: center;
@@ -1050,10 +1047,8 @@ body {
 }
 
 .service-card {
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 40px 32px;
   border-radius: var(--radius-md);
   position: relative;
@@ -1154,10 +1149,8 @@ body {
 }
 
 .project-card {
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   padding: 32px 28px;
   display: flex;
@@ -1173,7 +1166,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 1px;
   background: var(--gradient-accent);
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -1181,8 +1174,8 @@ body {
 
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(124, 58, 237, 0.2);
-  box-shadow: var(--shadow-glow);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.1), inset 0 0 20px rgba(124, 58, 237, 0.03);
 }
 
 .project-card:hover::before {
@@ -1200,18 +1193,18 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.15);
+  background: transparent;
+  border: 1px solid rgba(124, 58, 237, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent-start);
-  transition: transform 0.35s ease, background 0.35s ease;
+  transition: transform 0.35s ease, border-color 0.35s ease;
 }
 
 .project-card:hover .project-card-icon {
   transform: scale(1.08) rotate(-5deg);
-  background: rgba(124, 58, 237, 0.18);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
 .project-card-num {
@@ -1339,10 +1332,8 @@ body {
 }
 
 .skill-category {
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   padding: 28px 24px;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
@@ -1350,8 +1341,8 @@ body {
 
 .skill-category:hover {
   transform: translateY(-4px);
-  border-color: rgba(124, 58, 237, 0.15);
-  box-shadow: var(--shadow-glow);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.1), inset 0 0 20px rgba(124, 58, 237, 0.03);
 }
 
 .skill-category-title {
@@ -1418,16 +1409,14 @@ body {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: transform var(--transition), border-color var(--transition), color var(--transition), background var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
 .social-link:hover {
