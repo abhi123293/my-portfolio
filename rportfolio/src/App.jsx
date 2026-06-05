@@ -283,7 +283,7 @@ function Navbar() {
           })}
         </ul>
 
-        <a href="mailto:abhijithpj@gmail.com" className="nav-cta">
+        <a href="mailto:pjabhijith8@gmail.com" className="nav-cta">
           Let's Talk
         </a>
 
@@ -310,7 +310,7 @@ function Navbar() {
           <div className="mobile-menu-socials">
             <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub"><GithubIcon /></a>
             <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedInIcon /></a>
-            <a href="mailto:abhijithpj@gmail.com" aria-label="Email"><MailIcon /></a>
+            <a href="mailto:pjabhijith8@gmail.com" aria-label="Email"><MailIcon /></a>
           </div>
         </div>
       </div>
@@ -659,7 +659,7 @@ function Footer() {
             <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="social-link" aria-label="LinkedIn">
               <LinkedInIcon />
             </a>
-            <a href="mailto:abhijithpj@gmail.com" className="social-link" aria-label="Email">
+            <a href="mailto:pjabhijith8@gmail.com" className="social-link" aria-label="Email">
               <MailIcon />
             </a>
           </div>
