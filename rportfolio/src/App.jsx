@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import CollegeProject from "./components/CollegeProject";
 import NotesProject from "./components/NotesProject";
@@ -12,7 +12,6 @@ const NAV_ITEMS = [
   { label: "Services", href: "#services" },
   { label: "Works", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const SKILL_CATEGORIES = [
@@ -105,19 +104,6 @@ const PROJECTS = [
     text: "This personal portfolio website built using React and modern CSS with 3D effects, animations, and glassmorphism design.",
     link: null,
     icon: "globe",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    name: "College Professor",
-    role: "Academic Mentor",
-    text: "Abhijith showed exceptional problem-solving skills during the NAVIA project. His ability to integrate AI with hardware was impressive.",
-  },
-  {
-    name: "Project Collaborator",
-    role: "Team Member",
-    text: "Working with Abhijith was a great experience. He brings creativity and technical depth to every project he works on.",
   },
 ];
 
@@ -267,7 +253,7 @@ function GeometricBg() {
 function Navbar() {
   const scrolled = useScrollPast(30);
   const [open, setOpen] = useState(false);
-  const activeSection = useActiveSection(["about", "services", "projects", "experience", "contact"]);
+  const activeSection = useActiveSection(["about", "services", "projects", "experience"]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -649,219 +635,6 @@ function Skills() {
   );
 }
 
-function Testimonials() {
-  return (
-    <section className="testimonials-section">
-      <h2 className="section-title" data-reveal>What People Say</h2>
-      <p className="section-subtitle" data-reveal>
-        Feedback from collaborators and mentors
-      </p>
-      <div className="testimonials-grid">
-        {TESTIMONIALS.map((t, i) => (
-          <div className="testimonial-card" key={i} data-reveal data-reveal-delay={i * 100}>
-            <div className="testimonial-quote">"</div>
-            <p className="testimonial-text">{t.text}</p>
-            <div className="testimonial-author">
-              <div className="testimonial-avatar">
-                {t.name.charAt(0)}
-              </div>
-              <div>
-                <p className="testimonial-name">{t.name}</p>
-                <p className="testimonial-role">{t.role}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [fieldErrors, setFieldErrors] = useState({});
-
-  const validateField = useCallback((field, value) => {
-    const errors = { ...fieldErrors };
-    if (field === "name") {
-      if (value.trim().length < 2) errors.name = "Name must be at least 2 characters";
-      else delete errors.name;
-    }
-    if (field === "email") {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(value)) errors.email = "Please enter a valid email";
-      else delete errors.email;
-    }
-    if (field === "message") {
-      if (value.trim().length < 10) errors.message = "Message must be at least 10 characters";
-      else delete errors.message;
-    }
-    setFieldErrors(errors);
-  }, [fieldErrors]);
-
-  const handleBlur = (field, value) => {
-    validateField(field, value);
-  };
-
-  async function handleSubmit() {
-    setError("");
-    setSuccess("");
-
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      setError("Please fill in all fields");
-      return;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address");
-      return;
-    }
-    if (message.trim().length < 10) {
-      setError("Message must contain at least 10 characters");
-      return;
-    }
-
-    setLoading(true);
-    try {
-      const response = await fetch(
-        "https://portbackend-1-o5d1.onrender.com/contact",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, message }),
-        }
-      );
-      const data = await response.json();
-
-      if (!response.ok) {
-        setError(data.error || "Failed to send message");
-        return;
-      }
-
-      const sentName = name;
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSuccess(`Thank you ${sentName}! Your message has been sent successfully.`);
-      setTimeout(() => setSuccess(""), 5000);
-    } catch (err) {
-      console.error("Error:", err);
-      setError("Something went wrong. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  return (
-    <section className="contact-section" id="contact">
-      <h2 className="section-title" data-reveal>Let's Work Together</h2>
-      <p className="section-subtitle" data-reveal>
-        Have a project in mind or just want to say hi? Drop a message.
-      </p>
-
-      <div className="contact-wrapper">
-        <div className="contact-box" data-reveal>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              onBlur={() => handleBlur("name", name)}
-              className={fieldErrors.name ? "input-error" : ""}
-            />
-            {fieldErrors.name && <span className="field-error">{fieldErrors.name}</span>}
-          </div>
-
-          <div className="form-group">
-            <input
-              type="email"
-              placeholder="Your Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onBlur={() => handleBlur("email", email)}
-              className={fieldErrors.email ? "input-error" : ""}
-            />
-            {fieldErrors.email && <span className="field-error">{fieldErrors.email}</span>}
-          </div>
-
-          <div className="form-group">
-            <textarea
-              placeholder="Your Message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              onBlur={() => handleBlur("message", message)}
-              className={fieldErrors.message ? "input-error" : ""}
-            />
-            {fieldErrors.message && <span className="field-error">{fieldErrors.message}</span>}
-          </div>
-
-          <button
-            onClick={handleSubmit}
-            type="button"
-            disabled={loading}
-            className={`submit-btn ${loading ? "loading" : ""}`}
-          >
-            {loading ? (
-              <span className="btn-loading">
-                <span className="spinner" /> Sending...
-              </span>
-            ) : (
-              <>Send Message</>
-            )}
-          </button>
-
-          {success && (
-            <div className="success-message">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22,4 12,14.01 9,11.01" />
-              </svg>
-              {success}
-            </div>
-          )}
-          {error && (
-            <div className="error-message">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" /><line x1="15" y1="9" x2="9" y2="15" /><line x1="9" y1="9" x2="15" y2="15" />
-              </svg>
-              {error}
-            </div>
-          )}
-        </div>
-
-        <div className="contact-info" data-reveal data-reveal-delay="100">
-          <div className="contact-info-card">
-            <h3>Get in Touch</h3>
-            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-            <div className="contact-details">
-              <div className="contact-detail-item">
-                <MailIcon />
-                <span>abhijithpj@gmail.com</span>
-              </div>
-            </div>
-            <div className="social-links">
-              <a href="https://github.com/" target="_blank" rel="noreferrer" className="social-link" aria-label="GitHub">
-                <GithubIcon />
-              </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="social-link" aria-label="LinkedIn">
-                <LinkedInIcon />
-              </a>
-              <a href="mailto:abhijithpj@gmail.com" className="social-link" aria-label="Email">
-                <MailIcon />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Footer() {
   return (
     <footer className="footer">
@@ -875,7 +648,6 @@ function Footer() {
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#projects">Works</a>
-          <a href="#contact">Contact</a>
         </div>
         <div className="footer-social">
           <h4>Connect</h4>
@@ -911,8 +683,6 @@ function HomePage() {
         <Services />
         <Projects />
         <Skills />
-        <Testimonials />
-        <Contact />
       </main>
       <Footer />
     </div>
