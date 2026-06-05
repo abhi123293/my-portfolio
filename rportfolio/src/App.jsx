@@ -83,25 +83,9 @@ const SERVICES = [
 const PROJECTS = [
   {
     num: "01",
-    title: "Notes App",
-    tags: ["React", "Node.js", "MongoDB", "Express"],
-    text: "A full-stack MERN application to create, read, update, and delete notes with a clean, responsive interface and real-time updates.",
-    link: "/notes-project",
-    icon: "note",
-  },
-  {
-    num: "02",
-    title: "Book API",
-    tags: ["Express", "MongoDB", "REST", "Node.js"],
-    text: "A backend RESTful API built with Node.js, Express.js, MongoDB, and Mongoose for comprehensive book management.",
-    link: null,
-    icon: "book",
-  },
-  {
-    num: "03",
     title: "Portfolio Website",
-    tags: ["React", "CSS", "Three.js", "Design"],
-    text: "This personal portfolio website built using React and modern CSS with 3D effects, animations, and glassmorphism design.",
+    tags: ["React", "Node.js", "Express", "MongoDB", "Responsive Design", "Modern UI/UX"],
+    text: "A full-stack developer portfolio built with React, Node.js, Express.js, and MongoDB. Features responsive design, modern UI/UX techniques, smooth animations, glassmorphism aesthetics, and a clean component-driven architecture — showcasing end-to-end development skills from design to deployment.",
     link: null,
     icon: "globe",
   },
@@ -548,6 +532,7 @@ function ProjectIcon({ type }) {
 }
 
 function Projects() {
+  const project = PROJECTS[0];
   return (
     <section className="projects-section" id="projects">
       <h2 className="section-title" data-reveal>My Projects</h2>
@@ -555,41 +540,24 @@ function Projects() {
         A selection of work I'm proud of
       </p>
 
-      <div className="projects-grid">
-        {PROJECTS.map((p, i) => (
-          <article
-            className="project-card"
-            data-reveal
-            data-reveal-delay={i * 100}
-            key={p.num}
-          >
-            <div className="project-card-header">
-              <div className="project-card-icon">
-                <ProjectIcon type={p.icon} />
-              </div>
-              <span className="project-card-num">{p.num}</span>
+      <article className="project-card-featured" data-reveal>
+        <div className="project-card-featured-inner">
+          <div className="project-card-featured-header">
+            <div className="project-card-icon">
+              <ProjectIcon type={project.icon} />
             </div>
-            <h3 className="project-card-title">{p.title}</h3>
-            <p className="project-card-text">{p.text}</p>
-            <div className="project-tags">
-              {p.tags.map((t) => (
-                <span className="project-tag" key={t}>{t}</span>
-              ))}
-            </div>
-            <div className="project-card-footer">
-              {p.link ? (
-                <Link to={p.link} className="project-cta">
-                  View Project <span aria-hidden="true">→</span>
-                </Link>
-              ) : (
-                <span className="project-cta disabled">
-                  Coming Soon <span aria-hidden="true">→</span>
-                </span>
-              )}
-            </div>
-          </article>
-        ))}
-      </div>
+            <span className="project-card-num">{project.num}</span>
+          </div>
+          <h3 className="project-card-title">{project.title}</h3>
+          <p className="project-card-text">{project.text}</p>
+          <div className="project-tags">
+            {project.tags.map((t) => (
+              <span className="project-tag" key={t}>{t}</span>
+            ))}
+          </div>
+        </div>
+        <div className="project-card-featured-glow" />
+      </article>
 
       <div className="college-btn-box" data-reveal>
         <Link to="/projects" className="college-projects-btn">

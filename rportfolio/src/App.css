@@ -1140,59 +1140,74 @@ body {
   position: relative;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1000px;
+.project-card-featured {
+  position: relative;
+  max-width: 720px;
   width: 100%;
-}
-
-.project-card {
+  padding: 48px 44px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  border-radius: 20px;
   overflow: hidden;
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.project-card::before {
+.project-card-featured::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 2px;
   background: var(--gradient-accent);
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.4s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(124, 58, 237, 0.3);
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.1), inset 0 0 20px rgba(124, 58, 237, 0.03);
+.project-card-featured:hover {
+  transform: translateY(-8px);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 8px 40px rgba(124, 58, 237, 0.12), 0 0 80px rgba(124, 58, 237, 0.06);
 }
 
-.project-card:hover::before {
+.project-card-featured:hover::before {
   opacity: 1;
 }
 
-.project-card-header {
+.project-card-featured-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card-featured-glow {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.project-card-featured:hover .project-card-featured-glow {
+  opacity: 1;
+}
+
+.project-card-featured .project-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-.project-card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+.project-card-featured .project-card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
   background: transparent;
   border: 1px solid rgba(124, 58, 237, 0.2);
   display: flex;
@@ -1202,12 +1217,12 @@ body {
   transition: transform 0.35s ease, border-color 0.35s ease;
 }
 
-.project-card:hover .project-card-icon {
+.project-card-featured:hover .project-card-icon {
   transform: scale(1.08) rotate(-5deg);
   border-color: rgba(124, 58, 237, 0.4);
 }
 
-.project-card-num {
+.project-card-featured .project-card-num {
   font-family: 'Outfit', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -1215,72 +1230,38 @@ body {
   letter-spacing: 1px;
 }
 
-.project-card-title {
+.project-card-featured .project-card-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 12px;
-  letter-spacing: -0.3px;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
 }
 
-.project-card-text {
-  font-size: 14px;
-  line-height: 1.75;
+.project-card-featured .project-card-text {
+  font-size: 15px;
+  line-height: 1.8;
   color: var(--text-secondary);
-  margin-bottom: 20px;
-  flex: 1;
+  margin-bottom: 28px;
 }
 
-.project-tags {
+.project-card-featured .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 24px;
+  gap: 8px;
 }
 
-.project-tag {
-  font-size: 11px;
+.project-card-featured .project-tag {
+  font-size: 12px;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: var(--radius-pill);
   background: rgba(124, 58, 237, 0.08);
   color: #a78bfa;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border: 1px solid rgba(124, 58, 237, 0.12);
-}
-
-.project-card-footer {
-  margin-top: auto;
-}
-
-.project-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-pill);
-  background: transparent;
-  color: var(--text-primary);
-  font-weight: 500;
-  font-size: 13px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-
-.project-cta:hover {
-  background: var(--gradient-accent);
-  border-color: transparent;
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
-  transform: translateY(-2px);
-}
-
-.project-cta.disabled {
-  opacity: 0.35;
-  pointer-events: none;
 }
 
 .college-btn-box {
@@ -1294,22 +1275,24 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 32px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
+  padding: 16px 36px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-primary);
   text-decoration: none;
   border-radius: var(--radius-pill);
   font-weight: 500;
   font-size: 15px;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  letter-spacing: 0.3px;
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
 }
 
 .college-projects-btn:hover {
   background: var(--gradient-accent);
   border-color: transparent;
-  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.35);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(124, 58, 237, 0.35);
+  transform: translateY(-3px);
+  color: #fff;
 }
 
 /* ========================================
@@ -1584,8 +1567,12 @@ body {
     font-size: 40px;
   }
 
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .project-card-featured {
+    padding: 36px 32px;
+  }
+
+  .project-card-featured .project-card-title {
+    font-size: 26px;
   }
 
   .footer-inner {
@@ -1727,17 +1714,22 @@ body {
     padding: 32px 24px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-  }
-
-  .project-card {
+  .project-card-featured {
     padding: 28px 24px;
   }
 
-  .project-card-title {
-    font-size: 20px;
+  .project-card-featured .project-card-title {
+    font-size: 22px;
+  }
+
+  .project-card-featured .project-card-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .college-projects-btn {
+    padding: 14px 30px;
+    font-size: 14px;
   }
 
   .project-card-text {
