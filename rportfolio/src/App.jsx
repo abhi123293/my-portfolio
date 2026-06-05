@@ -319,42 +319,43 @@ function Navbar() {
 }
 
 function useTypingAnimation(words, typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000) {
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState(words[0]);
   const stateRef = useRef({ wordIndex: 0, isDeleting: false });
 
-  useEffect(() => {
-    let timeout;
-    const tick = () => {
-      const { wordIndex, isDeleting } = stateRef.current;
-      const currentWord = words[wordIndex];
+  useEffect(
+    () => {
+      let timeout;
+      const tick = () => {
+        const { wordIndex, isDeleting } = stateRef.current;
+        const currentWord = words[wordIndex];
 
-      if (!isDeleting && displayText === currentWord) {
-        timeout = setTimeout(() => {
-          stateRef.current.isDeleting = true;
-          tick();
-        }, pauseTime);
-        return;
-      }
+        if (!isDeleting && displayText === currentWord) {
+          timeout = setTimeout(() => {
+            stateRef.current.isDeleting = true;
+            tick();
+          }, pauseTime);
+          return;
+        }
 
-      if (isDeleting && displayText === "") {
-        stateRef.current.isDeleting = false;
-        stateRef.current.wordIndex = (wordIndex + 1) % words.length;
-        timeout = setTimeout(tick, typingSpeed);
-        return;
-      }
+        if (isDeleting && displayText === "") {
+          stateRef.current.isDeleting = false;
+          stateRef.current.wordIndex = (wordIndex + 1) % words.length;
+          timeout = setTimeout(tick, typingSpeed);
+          return;
+        }
 
-      const nextText = isDeleting
-        ? currentWord.substring(0, displayText.length - 1)
-        : currentWord.substring(0, displayText.length + 1);
+        const nextText = isDeleting
+          ? currentWord.substring(0, displayText.length - 1)
+          : currentWord.substring(0, displayText.length + 1);
 
-      setDisplayText(nextText);
-      timeout = setTimeout(tick, isDeleting ? deletingSpeed : typingSpeed);
-    };
+        setDisplayText(nextText);
+        timeout = setTimeout(tick, isDeleting ? deletingSpeed : typingSpeed);
+      };
 
-    timeout = setTimeout(tick, typingSpeed);
-    return () => clearTimeout(timeout);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      timeout = setTimeout(tick, typingSpeed);
+      return () => clearTimeout(timeout);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
   return displayText;
 }
@@ -376,13 +377,13 @@ function Hero() {
             A passionate{" "}
             <span className="typing-text">
               <span className="typing-word">{displayText}</span>
-              <span className="typing-cursor">|</span>
+              <span className="typing-cursor" />
             </span>{" "}
             crafting modern web experiences with clean code and creative design.
           </p>
           <div className="hero-actions">
-            <a href="mailto:abhijithpj@gmail.com" className="email">
-              <MailIcon /> abhijithpj@gmail.com
+            <a href="mailto:pjabhijith8@gmail.com" className="email">
+              <MailIcon /> pjabhijith8@gmail.com
             </a>
             <div className="hero-socials">
               <a href="https://github.com/" target="_blank" rel="noreferrer" className="hero-social-link" aria-label="GitHub">

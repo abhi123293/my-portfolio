@@ -111,8 +111,8 @@ body {
 }
 
 @keyframes typing-cursor {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @keyframes geo-float-1 {
@@ -557,7 +557,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px var(--section-pad-x) 80px;
+  padding: 120px var(--section-pad-x) 20px;
   position: relative;
   overflow: hidden;
 }
@@ -620,9 +620,13 @@ body {
 }
 
 .typing-cursor {
-  color: var(--accent-end);
-  animation: typing-cursor 0.8s infinite;
-  font-weight: 300;
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--accent-end);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: typing-cursor 0.8s steps(2) infinite;
 }
 
 .hero-actions {
@@ -814,7 +818,7 @@ body {
    ABOUT
    ======================================== */
 .about-section {
-  padding: var(--section-pad-y) var(--section-pad-x);
+  padding: 40px var(--section-pad-x) var(--section-pad-y);
   display: flex;
   flex-direction: column;
   align-items: center;
