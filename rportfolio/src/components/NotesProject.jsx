@@ -9,7 +9,7 @@ function NotesProject() {
 
   return (
     <div className="notes-project-page">
-      <Link to="/" className="back-home-btn">
+      <Link to=" /" className="back-home-btn">
         ← Back Home
       </Link>
 

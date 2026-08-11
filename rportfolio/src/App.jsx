@@ -23,6 +23,7 @@ const SKILL_CATEGORIES = [
       { name: "CSS3", color: "#1572b6", icon: "C" },
       { name: "JavaScript", color: "#f7df1e", icon: "JS" },
       { name: "React", color: "#61dafb", icon: "R" },
+      {name:"Typescript",color:"#74c35a",icon:"T"}
     ],
   },
   {
@@ -31,14 +32,19 @@ const SKILL_CATEGORIES = [
       { name: "Node.js", color: "#339933", icon: "N" },
       { name: "Express.js", color: "#ffffff", icon: "Ex" },
       { name: "MongoDB", color: "#47a248", icon: "M" },
+      {name: "MySql", color: "#35db93", icon: "M"}
     ],
   },
   {
     title: "Tools & Design",
     skills: [
       { name: "Git", color: "#f05032", icon: "G" },
-      { name: "Photoshop", color: "#31a8ff", icon: "Ps" },
+       { name: "GitHub", color: "#f05032", icon: "G" },
       { name: "VS Code", color: "#007acc", icon: "VS" },
+        { name: "PowerBi", color: "#f05032", icon: "p" },
+         { name: "Excel", color: "#32f042", icon: "Ex" },
+          { name: "Figma", color: "#1c84b4", icon: "Fg" },
+           { name: "Photoshop", color: "#31a8ff", icon: "Ps" },
     ],
   },
   {
@@ -70,15 +76,15 @@ const SERVICES = [
     title: "Backend Development",
     text: "I create robust RESTful APIs and server-side logic using Node.js, Express.js, and MongoDB with security best practices.",
   },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
-      </svg>
-    ),
-    title: "3D Web Design",
-    text: "I add interactive 3D elements and immersive experiences using Three.js, React Three Fiber, and creative CSS animations.",
-  },
+  // {
+  //   icon: (
+  //     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  //       <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
+  //     </svg>
+  //   ),
+  //   title: "3D Web Design",
+  //   text: "I add interactive 3D elements and immersive experiences using Three.js, React Three Fiber, and creative CSS animations.",
+  // },
 ];
 
 const PROJECTS = [
@@ -346,7 +352,7 @@ function useTypingAnimation(words, typingSpeed = 100, deletingSpeed = 50, pauseT
 }
 
 function Hero() {
-  const words = ["MERN Stack Developer", "Frontend Developer", "Backend Developer", "3D Web Designer"];
+  const words = ["MERN Stack Developer", "Frontend Developer", "Backend Developer"];
   const displayText = useTypingAnimation(words);
 
   return (
@@ -414,7 +420,7 @@ function About() {
           <p>
             I'm Abhijith PJ, a MERN stack developer dedicated to building
             modern and responsive web applications. I enjoy working with React,
-            Node.js, Express.js, MongoDB, and creative 3D web designs.
+            Node.js, Express.js, MongoDB, and creative web designs.
           </p>
         </div>
         <div className="about-box">
@@ -478,7 +484,7 @@ function Stats() {
         <h2>MERN</h2>
         <p>Stack Developer</p>
       </div>
-      <a href="/Abhijith_Resume.pdf" download className="resume-btn" data-reveal data-reveal-delay="300">
+      <a href="/AbhijithResume.pdf" download className="resume-btn" data-reveal data-reveal-delay="300">
         Download Resume
       </a>
     </section>

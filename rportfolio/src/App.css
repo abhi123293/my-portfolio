@@ -1040,6 +1040,7 @@ body {
 
 .services-container {
   display: grid;
+  position: relative;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   max-width: 1000px;
@@ -1053,8 +1054,11 @@ body {
   border-radius: var(--radius-md);
   position: relative;
   overflow: hidden;
+  left: 150px;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  
 }
+
 
 .service-card::before {
   content: '';
